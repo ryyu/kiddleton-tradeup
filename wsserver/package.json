@@ -1,0 +1,17 @@
+{
+  "name": "wsserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wsServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.8.2",
+    "prisma": "^6.8.2",
+    "socket.io": "^4.8.1",
+    "ws": "^8.18.2"
+  }
+}
