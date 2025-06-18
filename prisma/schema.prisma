@@ -16,3 +16,20 @@ model User {
   phoneNumber String @unique
   points Int @default(0)
 }
+
+model PrizeStats {
+  id  Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  numPrizesReturned Int
+  numPointsAwarded Int
+  prizeType String
+  customerPhoneNumber String
+}
+
+model TradeUp {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  numPointsRemoved Int
+  prizeType String
+  customerPhoneNumber String
+}

@@ -15,13 +15,13 @@ import Link from "next/link"
 
 const Welcome = () => {
   return (
-    <div className="flex flex-col gap-6 text-center">
+    <div className="flex flex-col gap-6 text-center text-xl">
         <Card>
             <CardHeader>
                 <CardTitle>Welcome to Kiddleton Trade Up!</CardTitle>
-                <CardDescription>Please select an option</CardDescription>
+                <CardDescription className="text-lg">Please select an option</CardDescription>
             </CardHeader>
-            <CardContent className="text-black">
+            <CardContent className="text-black text-lg">
                 <div className="flex flex-col gap-6">
                     <Button asChild>
                         <Link href={"/new-user"}>New User</Link>
