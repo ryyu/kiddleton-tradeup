@@ -15,12 +15,23 @@ import {
 } from "@/components/ui/tabs"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useActionState } from "react"
+import { useActionState, useEffect } from "react"
 import { staffTradeUp, staffUpdateUser } from "@/app/actions/actions"
+import { toast } from "sonner"
 
 export default function StaffDashboard() {
     const [updateState, updateFormAction] = useActionState(staffUpdateUser, null, "n/a")
     const [tradeUpState, tradeUpFormAction] = useActionState(staffTradeUp, null, "n/a")
+
+    useEffect(() => {
+        if(updateState?.message) {
+            toast(updateState.message)
+        }
+        if(tradeUpState?.message) {
+            toast(tradeUpState.message)
+        }
+
+    }, [updateState, tradeUpState])
 
     return (
         <>

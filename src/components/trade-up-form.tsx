@@ -4,17 +4,23 @@ import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useActionState } from "react"
+import { useActionState, useEffect } from "react"
 import { staffTradeUp } from "@/app/actions/actions"
+import { toast } from "sonner"
 
 export default function TradeUp() {
     const [state, formAction] = useActionState(staffTradeUp, null, "n/a")
+
+    useEffect(() => {
+        if(state?.message) {
+        toast(state.message)
+        }
+    }, [state])
 
 
     return (

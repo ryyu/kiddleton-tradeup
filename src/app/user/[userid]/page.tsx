@@ -1,4 +1,4 @@
-import { getUser, getUserById } from "@/app/actions/actions"
+import { getUserById } from "@/app/actions/actions"
 import Link from "next/link";
 import UserCard from "@/components/user-card"
 

@@ -3,12 +3,12 @@
 import prisma from "@/lib/prismadb";
 import { redirect } from "next/navigation";
 
-type User = {
-    id: number,
-    name: string,
-    phoneNumber: string,
-    points: number,
-}
+// type User = {
+//     id: number,
+//     name: string,
+//     phoneNumber: string,
+//     points: number,
+// }
 
 export async function createUser(prevState: any, formData: FormData) {
 
@@ -99,6 +99,7 @@ export async function staffUpdateUser(prevState: any, formData: FormData) {
         }
     })
     console.log(newTradeupStat);
+    return {message: "Successfully updated account"}
 }
 
 export async function staffTradeUp(prevState: any, formData: FormData) {
@@ -127,4 +128,5 @@ export async function staffTradeUp(prevState: any, formData: FormData) {
         }
     })
     console.log(newTradeupStat);
+    return {message: "Successfully updated account"}
 }

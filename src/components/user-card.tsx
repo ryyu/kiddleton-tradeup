@@ -17,11 +17,10 @@ interface UserProps {
 }
 
 const UserCard: React.FC<UserProps> = ({
-    id, 
     name,
-    phoneNumber,
     points
 }) => {
+    
     return (
       <div className="flex flex-col gap-6">
         <Card>
