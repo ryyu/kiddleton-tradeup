@@ -3,7 +3,7 @@ import Link from "next/link";
 import UserCard from "@/components/user-card"
 
 interface Iparams {
-    params: Promise<{ userid?: string[]; }>
+    params: Promise<{ userid?: string; }>
 }
 
 export default async function UserPage({ params } : {
@@ -13,7 +13,7 @@ export default async function UserPage({ params } : {
     console.log(userid);
     // + js style typecast to number'
 
-    const user = await getUserById(userid? +userid : 0);
+    const user = await getUserById(userid? userid : "");
     let body_content = (
         <div>
             User Not Found

@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label"
 import Link from "next/link";
 
 interface UserProps {
-    id: number;
+    id: string;
     name: string;
     phoneNumber: string;
     points: number;

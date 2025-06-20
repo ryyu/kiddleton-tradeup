@@ -61,7 +61,10 @@ export async function getUser(prevState: any, formData: FormData) {
     return { message: "Could not find account" };
 }
 
-export async function getUserById(id: number) {
+export async function getUserById(id: string) {
+    if(id == "") {
+        return null;
+    }
     const user = await prisma.user.findUnique({
         where: {
             id: id
