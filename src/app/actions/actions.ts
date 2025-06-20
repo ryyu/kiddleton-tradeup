@@ -10,7 +10,7 @@ import { redirect } from "next/navigation";
 //     points: number,
 // }
 
-export async function createUser(prevState: any, formData: FormData) {
+export async function createUser(prevState: any, formData: FormData) { // eslint-disable-line
 
     const name = formData.get("name") as string;
     const phoneNumber = formData.get("phone-number") as string;
@@ -34,7 +34,7 @@ export async function createUser(prevState: any, formData: FormData) {
     return { message: "Unable to create new account" };
 }
 
-export async function getUser(prevState: any, formData: FormData) {
+export async function getUser(prevState: any, formData: FormData) { // eslint-disable-line
 
     const phoneNumber = formData.get("phone-number") as string;
 
@@ -74,7 +74,7 @@ export async function getUserById(id: string) {
     return null;
 }
 
-export async function staffUpdateUser(prevState: any, formData: FormData) {
+export async function staffUpdateUser(prevState: any, formData: FormData) { // eslint-disable-line
     const phoneNumber = formData.get("customer-phone-number") as string;
     const points = formData.get("points-to-add") as string;
     const numPrizes = formData.get("number-of-prizes-returned") as string;
@@ -105,7 +105,7 @@ export async function staffUpdateUser(prevState: any, formData: FormData) {
     return {message: "Successfully updated account"}
 }
 
-export async function staffTradeUp(prevState: any, formData: FormData) {
+export async function staffTradeUp(prevState: any, formData: FormData) { // eslint-disable-line
     const phoneNumber = formData.get("customer-phone-number") as string;
     const points = formData.get("points-to-remove") as string;
     const prizeType = formData.get("type-of-prize") as string;
