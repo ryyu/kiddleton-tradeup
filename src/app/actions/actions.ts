@@ -1,6 +1,6 @@
 'use server';
 
-import prisma from "@/lib/prismadb";
+import { prisma } from "@/lib/prismadb";
 import { redirect } from "next/navigation";
 
 // type User = {
