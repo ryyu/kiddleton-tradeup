@@ -10,6 +10,9 @@ import { redirect } from "next/navigation";
 //     points: number,
 // }
 
+let users = {}
+
+
 export async function createUser(prevState: any, formData: FormData) {
 
     const name = formData.get("name") as string;

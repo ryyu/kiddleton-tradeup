@@ -3,11 +3,11 @@ import Link from "next/link";
 import UserCard from "@/components/user-card"
 
 interface Iparams {
-    userid?: string;
+    params: Promise<{ userid?: string[]; }>
 }
 
 export default async function UserPage({ params } : {
-    params: Iparams
+    params: Iparams["params"]
 }) {
     const { userid } = await params;
     console.log(userid);
