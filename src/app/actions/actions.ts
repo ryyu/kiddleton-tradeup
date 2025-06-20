@@ -11,7 +11,7 @@ import { redirect } from "next/navigation";
 // }
 
 export async function createUser(prevState: any, formData: FormData) { // eslint-disable-line
-
+    return { message: "Created User" };
     const name = formData.get("name") as string;
     const phoneNumber = formData.get("phone-number") as string;
 
@@ -30,12 +30,12 @@ export async function createUser(prevState: any, formData: FormData) { // eslint
         }
     } 
 
-    // I don't like returning null here tbh
     return { message: "Unable to create new account" };
 }
 
 export async function getUser(prevState: any, formData: FormData) { // eslint-disable-line
-
+    redirect(`/user/1`)
+    return { message: "Logged In" }
     const phoneNumber = formData.get("phone-number") as string;
 
     console.log(phoneNumber)
@@ -50,7 +50,7 @@ export async function getUser(prevState: any, formData: FormData) { // eslint-di
         if(user) {
             console.log(user);
 
-            redirect(`/user/${user.id}`)
+            
         }
 
         return { message: "Could not find account" };
@@ -59,22 +59,22 @@ export async function getUser(prevState: any, formData: FormData) { // eslint-di
 }
 
 export async function getUserById(id: string) {
+    if(id == "1") {
+        return {
+            id: "1",
+            name: "Ryan",
+            phoneNumber: "555-555-5555",
+            points: 10,
+        }
+    }
     if(id == "") {
         return null;
     }
-    const user = await prisma.user.findUnique({
-        where: {
-            id: id
-        }
-    })
-
-    if(user) {
-        return user
-    }
-    return null;
+    
 }
 
 export async function staffUpdateUser(prevState: any, formData: FormData) { // eslint-disable-line
+    return {message: "Successfully updated account"}
     const phoneNumber = formData.get("customer-phone-number") as string;
     const points = formData.get("points-to-add") as string;
     const numPrizes = formData.get("number-of-prizes-returned") as string;
@@ -106,6 +106,7 @@ export async function staffUpdateUser(prevState: any, formData: FormData) { // e
 }
 
 export async function staffTradeUp(prevState: any, formData: FormData) { // eslint-disable-line
+    return {message: "Successfully updated account"}
     const phoneNumber = formData.get("customer-phone-number") as string;
     const points = formData.get("points-to-remove") as string;
     const prizeType = formData.get("type-of-prize") as string;
